@@ -1,0 +1,45 @@
+ <div class="body"> 
+    
+ <div class="login-container">
+    <!-- <h2>Login</h2> -->
+    <p class="login-text">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-lock fa-stack-1x"></i>
+        </span>
+      </p>
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required [(ngModel)]="loginModel.email" name="email" placeholder="Enter your Email"/>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" required [(ngModel)]="loginModel.password" name="password" placeholder="Enter your Password" />
+      </div>
+      <button type="submit" [disabled]="!loginForm.form.valid">Login</button>
+      <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+      <p>Don't have an account? <a routerLink="/register">Register here</a></p>
+      <a href="#" class="login-forgot-pass">forgot password?</a>
+  <div class="underlay-photo"></div>
+  <div class="underlay-black"></div>
+    </form>
+  </div>
+</div> 
+
+<!-- <div class="login-container">
+<form class="login-form">
+    <p class="login-text">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-lock fa-stack-1x"></i>
+      </span>
+    </p>
+    <input type="email" class="login-username" autofocus="true" required="true" placeholder="Email" />
+    <input type="password" class="login-password" required="true" placeholder="Password" />
+    <input type="submit" name="Login" value="Login" class="login-submit" />
+  </form>
+  <a href="#" class="login-forgot-pass">forgot password?</a>
+  <div class="underlay-photo"></div>
+  <div class="underlay-black"></div> 
+</div> -->
